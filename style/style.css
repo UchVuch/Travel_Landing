@@ -81,17 +81,33 @@ body{
 .header__item:last-child{
 	margin: 0;
 }
+
+
 .header__link{
+	position: relative;
 	text-decoration: none;
 	color: #ffffff;
 	font-size: 1.25vw;
 	line-height: 1.67vw;
 }
-.header__link:hover,
-.header__link:focus,
-.header__link:active{
+.header__link:after{
+	content: "";
+	position: absolute;
+	width: 0%;
+	left: 0;
+	bottom: -3px;
+	height: 2px;
+	background-color: #ffffff;
+	transition: 0.5s ease-in-out;
+}
+.header__link:hover::after,
+.header__link:active::after{
+	width: 100%;
+}
+.header__link:focus{
 	opacity: 0.7;
 }
+
 
 /*section intro*/
 .intro{
